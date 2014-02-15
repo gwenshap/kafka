@@ -114,7 +114,6 @@ public class DataGenerator {
         System.out.println("Dump " + request.toString() + " to " + outPath.toUri().toString());
         byte[] bytes = request.toString().getBytes("UTF-8");
         KafkaETLKey dummyKey = new KafkaETLKey();
-        SequenceFile.setCompressionType(conf, SequenceFile.CompressionType.NONE);
         SequenceFile.Writer writer = SequenceFile.createWriter(fs, conf, outPath, 
                                         KafkaETLKey.class, BytesWritable.class);
         writer.append(dummyKey, new BytesWritable(bytes));

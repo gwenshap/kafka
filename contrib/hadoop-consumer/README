@@ -32,6 +32,7 @@ your hadoop installation directory.
 
 1. Complile using "sbt" to create a package for hadoop consumer code.
 ./sbt package
+./sbt assembly-package-dependency
 
 2. Run the hadoop-setup.sh script that enables write permission on the 
    required HDFS directory
